@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "array_void.h"
 
-ArrayVoid_Ptr create_array_void(Object_Ptr objects, unsigned length)
+ArrayVoid_ptr create_array_void(Object_Ptr objects, unsigned length)
 {
-  ArrayVoid_Ptr array_void = (ArrayVoid_Ptr)malloc(sizeof(ArrayVoid));
+  ArrayVoid_ptr array_void = (ArrayVoid_ptr)malloc(sizeof(ArrayVoid));
 
   array_void->array = (Object_Ptr)malloc(sizeof(Object) * length);
   array_void->length = length;
@@ -16,9 +16,9 @@ ArrayVoid_Ptr create_array_void(Object_Ptr objects, unsigned length)
   return array_void;
 }
 
-ArrayVoid_Ptr map_void(ArrayVoid_Ptr src, MapperVoid mapper)
+ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
 {
-  ArrayVoid_Ptr dest = (ArrayVoid_Ptr)malloc(sizeof(ArrayVoid));
+  ArrayVoid_ptr dest = (ArrayVoid_ptr)malloc(sizeof(ArrayVoid));
 
   dest->array = (Object_Ptr)malloc(sizeof(Object) * src->length);
   dest->length = src->length;

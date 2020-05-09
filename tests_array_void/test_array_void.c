@@ -31,7 +31,7 @@ Bool is_float_equal(Object obj_1, Object obj_2)
   return *(Float_Ptr)obj_1 == *(Float_Ptr)obj_2;
 }
 
-void assert_array_void_equal(ArrayVoid_Ptr array_1, ArrayVoid_Ptr array_2, Are_Equal is_data_equal, Message message)
+void assert_array_void_equal(ArrayVoid_ptr array_1, ArrayVoid_ptr array_2, Are_Equal is_data_equal, Message message)
 {
   Bool are_equals = True;
   

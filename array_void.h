@@ -17,12 +17,12 @@ typedef struct
   int length;
 } ArrayVoid;
 
-typedef ArrayVoid *ArrayVoid_Ptr;
+typedef ArrayVoid *ArrayVoid_ptr;
 
-ArrayVoid_Ptr create_array_void(Object_Ptr, unsigned);
+ArrayVoid_ptr create_array_void(Object_Ptr, unsigned);
 
-ArrayVoid_Ptr map_void(ArrayVoid_Ptr src, MapperVoid mapper);
-ArrayVoid_Ptr filter_void(ArrayVoid_Ptr src, PredicateVoid predicate);
-Object reduce_void(ArrayVoid_Ptr src, Object init, ReducerVoid reducer);
+ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper);
+ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate);
+Object reduce_void(ArrayVoid_ptr src, Object init, ReducerVoid reducer);
 
 #endif
