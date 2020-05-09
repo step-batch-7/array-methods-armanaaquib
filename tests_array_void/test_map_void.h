@@ -1,5 +1,5 @@
-#ifndef __TEST_MAP_H
-#define __TEST_MAP_H
+#ifndef __TEST_MAP_VOID_H
+#define __TEST_MAP_VOID_H
 
 #include "test_array_void.h"
 

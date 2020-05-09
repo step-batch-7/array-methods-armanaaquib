@@ -1,5 +1,5 @@
 #include "test_array_void.h"
-#include "test_map.h"
+#include "test_map_void.h"
 
 int main(void)
 {

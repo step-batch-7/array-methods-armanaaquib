@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
-#include "test_map.h"
+#include "test_map_void.h"
 
 Object to_lower(Object obj)
 {
