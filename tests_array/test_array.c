@@ -11,21 +11,6 @@ void display_tests_status()
   printf("Failing %u\n", NO_OF_FAILING_TEST);
 }
 
-Array_Ptr create_array(Int_Array int_array, unsigned length)
-{
-  Array_Ptr array = (Array_Ptr)malloc(sizeof(Array));
-
-  array->array = (Int_Array)malloc(sizeof(int) * length);
-  array->length = length;
-
-  for(unsigned i = 0; i < length; i++)
-  {
-    array->array[i] = int_array[i];
-  }
-
-  return array;
-}
-
 void fail_message(Message message)
 {
   printf("X %s\n", message);

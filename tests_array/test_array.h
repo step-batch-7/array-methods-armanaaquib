@@ -5,8 +5,6 @@
 
 typedef char *Message;
 
-Array_Ptr create_array(Int_Array, unsigned);
-
 void fail_message(Message message);
 void pass_message(Message message);
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "test_array.h"
+#include "array.h"
 
 int squares(int);
 void test_map_for_empty_array();
