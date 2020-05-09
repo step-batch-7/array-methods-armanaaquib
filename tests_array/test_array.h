@@ -9,6 +9,7 @@ void fail_message(Message message);
 void pass_message(Message message);
 
 void assert_array_equal(Array_Ptr, Array_Ptr, Message);
+void assert_int_equal(int, int, Message);
 
 void display_tests_status();
 

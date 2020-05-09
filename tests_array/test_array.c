@@ -49,3 +49,16 @@ void assert_array_equal(Array_Ptr array_1, Array_Ptr array_2, Message message)
   NO_OF_FAILING_TEST++;
   fail_message(message);
 }
+
+void assert_int_equal(int number_1, int number_2, Message message)
+{
+  if(number_1 == number_2)
+  {
+    NO_OF_PASSING_TEST++;
+    pass_message(message);
+    return;
+  }
+
+  NO_OF_FAILING_TEST++;
+  fail_message(message);
+}
