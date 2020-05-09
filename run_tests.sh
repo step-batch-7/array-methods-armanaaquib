@@ -1,9 +1,9 @@
 #! /bin/bash
 
-test_file=$1
+test_file=array
 test_directory=tests_$1
 
-cp $test_file.* $test_directory 
+cp $test_file*.* $test_directory
 
 cd $test_directory
 
