@@ -48,3 +48,15 @@ Array_Ptr filter(Array_Ptr src, Predicate predicate)
 
   return create_array(temp_array, count);
 }
+
+int reduce(Array_Ptr src, int init, Reducer reducer)
+{
+  int result = init;
+
+  for(unsigned i = 0; i < src->length; i++)
+  {
+    result = (*reducer)(result, src->array[i]);
+  }
+
+  return result;
+}
