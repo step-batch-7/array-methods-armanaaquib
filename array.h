@@ -23,7 +23,7 @@ typedef Array *Array_Ptr;
 Array_Ptr create_array(Int_Array, unsigned);
 
 Array_Ptr map(Array_Ptr src, Mapper mapper);
-Array *filter(Array *src, Predicate predicate);
+Array_Ptr filter(Array_Ptr src, Predicate predicate);
 int reduce(Array *src, int init, Reducer reducer);
 
 #endif

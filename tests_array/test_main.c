@@ -7,6 +7,11 @@ void test_map_for_empty_array();
 void test_map_for_array_of_integers();
 void test_map(void);
 
+Bool is_even(int);
+void test_filter_for_empty_array();
+void test_filter_for_array_of_integers();
+void test_filter(void);
+
 int square(int number)
 {
   return number * number;
@@ -46,9 +51,49 @@ void test_map(void)
   printf("\n");
 }
 
+Bool is_even(int number)
+{
+  return number % 2 == 0 ? 1 : 0;
+}
+
+void test_filter_for_empty_array(void)
+{
+  int empty_int_array[] = {};
+  Array_Ptr array = create_array(empty_int_array, 0);
+
+  Array_Ptr actual_array = filter(array, is_even);
+  Array_Ptr expected_array = create_array(empty_int_array, 0);
+
+  assert_array_equal(actual_array, expected_array, "should filter an empty array");
+}
+
+void test_filter_for_array_of_integers(void)
+{
+  int int_array[] = {1, 2, 3, 4, 0};
+  Array_Ptr array = create_array(int_array, 5);
+
+  Array_Ptr actual_array = filter(array, is_even);
+
+  int evens[] = {2, 4, 0};
+  Array_Ptr expected_array = create_array(evens, 3);
+
+  assert_array_equal(actual_array, expected_array, "should filter array of integers");
+}
+
+void test_filter(void)
+{
+  printf("Testing filter...\n");
+
+  test_filter_for_empty_array();
+  test_filter_for_array_of_integers();
+
+  printf("\n");
+}
+
 int main(void)
 {
   test_map();
+  test_filter();
 
   display_tests_status();
 

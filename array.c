@@ -30,3 +30,21 @@ Array_Ptr map(Array_Ptr src, Mapper mapper)
 
   return dest;
 }
+
+Array_Ptr filter(Array_Ptr src, Predicate predicate)
+{
+  int temp_array[src->length];
+  unsigned count = 0;
+
+  for(unsigned i = 0; i < src->length; i++)
+  {
+    int integer = src->array[i];
+
+    if((*predicate)(integer))
+    {
+      temp_array[count++] = integer;
+    }
+  }
+
+  return create_array(temp_array, count);
+}
