@@ -59,3 +59,60 @@ void assert_array_void_equal(ArrayVoid_ptr array_1, ArrayVoid_ptr array_2, Are_E
   NO_OF_FAILING_TEST++;
   fail_message(message);
 }
+
+Object create_object_from_int(int value)
+{
+  Int_Ptr obj = (Object)malloc(sizeof(int));
+  *obj = value;
+  return obj;
+}
+
+Object_Ptr create_objects_from_ints(Int_Ptr array, unsigned length)
+{
+  Object_Ptr objects = (Object_Ptr)malloc(sizeof(Object) * length);
+  
+  for(unsigned i = 0; i < length; i++)
+  {
+    objects[i] = create_object_from_int(array[i]);
+  }
+
+  return objects;
+}
+
+Object create_object_from_float(float value)
+{
+  Float_Ptr obj = (Object)malloc(sizeof(float));
+  *obj = value;
+  return obj;
+}
+
+Object_Ptr create_objects_from_floats(Float_Ptr array, unsigned length)
+{
+  Object_Ptr objects = (Object_Ptr)malloc(sizeof(Object) * length);
+  
+  for(unsigned i = 0; i < length; i++)
+  {
+    objects[i] = create_object_from_float(array[i]);
+  }
+
+  return objects;
+}
+
+Object create_object_from_char(char character)
+{
+  Char_Ptr obj = (Object)malloc(sizeof(char));
+  *obj = character;
+  return obj;
+}
+
+Object_Ptr create_objects_from_chars(Char_Ptr array, unsigned length)
+{
+  Object_Ptr objects = (Object_Ptr)malloc(sizeof(Object) * length);
+  
+  for(unsigned i = 0; i < length; i++)
+  {
+    objects[i] = create_object_from_char(array[i]);
+  }
+
+  return objects;
+}

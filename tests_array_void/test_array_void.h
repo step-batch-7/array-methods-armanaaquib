@@ -20,4 +20,13 @@ void assert_array_void_equal(ArrayVoid_ptr, ArrayVoid_ptr, Are_Equal, Message);
 
 void display_tests_status();
 
+Object create_object_from_int(int);
+Object_Ptr create_objects_from_ints(Int_Ptr, unsigned);
+
+Object create_object_from_float(float);
+Object_Ptr create_objects_from_floats(Float_Ptr, unsigned);
+
+Object create_object_from_char(char);
+Object_Ptr create_objects_from_chars(Char_Ptr, unsigned);
+
 #endif
