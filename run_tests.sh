@@ -18,7 +18,7 @@ then
   if [ $? == 0 ]
   then
     rm -f *.o
-    rm $test_file.*
+    rm $test_file*.*
 
     ./tests
   else
