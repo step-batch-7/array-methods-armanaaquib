@@ -17,6 +17,7 @@ Bool is_int_equal(Object, Object);
 Bool is_float_equal(Object, Object);
 
 void assert_array_void_equal(ArrayVoid_ptr, ArrayVoid_ptr, Are_Equal, Message);
+void assert_object_equal(Object, Object, Are_Equal, Message);
 
 void display_tests_status();
 

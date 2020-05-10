@@ -60,6 +60,19 @@ void assert_array_void_equal(ArrayVoid_ptr array_1, ArrayVoid_ptr array_2, Are_E
   fail_message(message);
 }
 
+void assert_object_equal(Object obj_1, Object obj_2, Are_Equal is_data_equal, Message message)
+{
+  if((*is_int_equal)(obj_1, obj_2))
+  {
+    NO_OF_PASSING_TEST++;
+    pass_message(message);
+    return;
+  }
+
+  NO_OF_FAILING_TEST--;
+  fail_message(message);
+}
+
 Object create_object_from_int(int value)
 {
   Int_Ptr obj = (Object)malloc(sizeof(int));
