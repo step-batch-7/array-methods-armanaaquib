@@ -31,6 +31,24 @@ ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
   return dest;
 }
 
+ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate)
+{
+  Object temp_objects[src->length];
+  unsigned count = 0;
+
+  for(unsigned i = 0; i < src->length; i++)
+  {
+    Object obj = src->array[i];
+
+    if((*predicate)(obj))
+    {
+      temp_objects[count++] = obj;
+    }
+  }
+
+  return create_array_void(temp_objects, count);
+}
+
 Object reduce_void(ArrayVoid_ptr src, Object init, ReducerVoid reducer)
 {
   Object result = init;
