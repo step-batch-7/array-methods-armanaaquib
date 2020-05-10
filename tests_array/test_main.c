@@ -58,7 +58,7 @@ void test_map(void)
 
 Bool is_even(int number)
 {
-  return number % 2 == 0 ? 1 : 0;
+  return number % 2 == 0 ? True : False;
 }
 
 void test_filter_for_empty_array(void)

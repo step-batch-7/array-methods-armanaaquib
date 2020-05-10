@@ -30,8 +30,7 @@ void test_reduce_void_for_array_of_floats(void)
   float float_array[] = {1.2, 2.5, 4.0, 9.1, 1.6};
   ArrayVoid_ptr array_void = create_array_void(create_objects_from_floats(float_array, 5), 5);
 
-  Object init = (Object)malloc(sizeof(float));
-  *(Float_Ptr)init = 0;
+  Object init = (Object)calloc(1, sizeof(float));
   Object result = reduce_void(array_void, init, add);
 
   Object expected_result = (Object)malloc(sizeof(float));
