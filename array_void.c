@@ -30,3 +30,15 @@ ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
 
   return dest;
 }
+
+Object reduce_void(ArrayVoid_ptr src, Object init, ReducerVoid reducer)
+{
+  Object result = init;
+
+  for(unsigned i = 0; i < src->length; i++)
+  {
+    result = (*reducer)(result, src->array[i]);
+  }
+
+  return result;
+}
