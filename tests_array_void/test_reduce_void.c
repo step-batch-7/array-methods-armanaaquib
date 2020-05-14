@@ -46,12 +46,12 @@ void test_reduce_void_for_array_of_ints(void)
 
   Object init = (Object)malloc(sizeof(int));
   *(Int_Ptr)init = INT_MIN;
-  ArrayVoid_ptr actual_array_void = reduce_void(array_void, init, greater);
+  Object result = reduce_void(array_void, init, greater);
 
   Object expected_result = (Object)malloc(sizeof(int));
   *(Int_Ptr)expected_result = 3;
   
-  assert_array_void_equal(actual_array_void, expected_result, is_int_equal, "should reduce array of integers");
+  assert_object_equal(result, expected_result, is_int_equal, "should reduce array of integers");
 }
 
 void test_reduce_void_for_empty_array(void)
@@ -63,7 +63,7 @@ void test_reduce_void_for_empty_array(void)
   *(Int_Ptr)init = 10;
   Object result = reduce_void(array, init, add);
 
-  assert_array_void_equal(result, init, is_int_equal, "should reduce an empty array");
+  assert_object_equal(result, init, is_int_equal, "should reduce an empty array");
 }
 
 void test_reduce_void(void)
